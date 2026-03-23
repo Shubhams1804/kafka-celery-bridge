@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "kafka-celery-bridge"
+version = "0.1.0"
+description = "Bridge Kafka events to Celery tasks — without the boilerplate."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.8"
+keywords = ["kafka", "celery", "bridge", "microservices", "event-driven", "python"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: System :: Distributed Computing",
+]
+dependencies = [
+    "kafka-python>=2.0.0",
+    "celery>=5.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-mock>=3.0",
+    "black",
+    "ruff",
+    "mypy",
+]
+
+[project.urls]
+Homepage = "https://github.com/YOUR_USERNAME/kafka-celery-bridge"
+Repository = "https://github.com/YOUR_USERNAME/kafka-celery-bridge"
+"Bug Tracker" = "https://github.com/YOUR_USERNAME/kafka-celery-bridge/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["kafka_celery_bridge*"]
+
+[tool.black]
+line-length = 100
+target-version = ["py38"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.mypy]
+python_version = "3.8"
+strict = false
+ignore_missing_imports = true
